@@ -1,0 +1,67 @@
+# KBC-Game
+
+A Python-based interactive quiz game inspired by the popular TV show "Kaun Banega Crorepati" (KBC). Test your knowledge with a series of questions and see how much you can win!
+
+## Features
+
+- **Interactive Gameplay:** Answer multiple-choice questions just like in the TV show.
+- **Dynamic Scoring:** Earn points for each correct answer and see your total score.
+- **Real-time Feedback:** Get immediate feedback on your answers.
+- **Game Over on Wrong Answer:** The game ends when you provide an incorrect answer, simulating the high stakes of the real game show.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+
+### Running the Game
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/KBC-Game.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd KBC-Game
+    ```
+3. Run the game:
+    ```bash
+    python kbc_game.py
+    ```
+
+### Game Rules
+
+1. The game will ask you a series of multiple-choice questions.
+2. For each question, type the letter corresponding to your answer (A, B, C, or D) and press Enter.
+3. If your answer is correct, you will earn points and proceed to the next question.
+4. If your answer is incorrect, the game will end, and your total score will be displayed.
+
+### Example Questions
+
+1. **Which animal is known as the Ship of the Desert?**
+    - A. OSTRICH
+    - B. CAMEL
+    - C. LION
+    - D. CAT
+
+2. **How many days are there in a week?**
+    - A. 4
+    - B. 5
+    - C. 10
+    - D. 7
+
+### Sample Code Snippet
+
+```python
+def option(correct_answer, current_amount):
+    ans = input("Enter the correct option:  ").upper()
+    if ans == correct_answer:
+        current_amount += 1000
+        print("CORRECT ANSWER")
+        print("CONGRATULATIONS! YOU HAVE WON: ", current_amount)
+        return current_amount, True
+    else:
+        print("Wrong answer")
+        print("Nice playing with you. You are taking Rs.", current_amount, "INR with you")
+        sys.exit()  # Exit the program
